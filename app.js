@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
+const formController = require("./controllers/formController");
 
 dotenv.config({ path: "./config.env" });
 
@@ -28,16 +29,6 @@ app.get("/", (req, res) => {
   res.sendFile(__dirname + "/index.html");
 });
 
-app.post("/submit-form", async (req, res) => {
-  const searchItem = await req.body.searchForThis;
-
-  console.log(searchItem);
-
-  res.send(`We can search for this item on our backend:  ${searchItem}`);
-
-  ///extract form data
-  ///do something with form data
-  ///load a page that says Hey you successfully sent a message, click here to go back home
-});
+app.post("/submit-form", formController.createFormEntry);
 
 module.exports = app;
