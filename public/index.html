@@ -5,12 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title> Julian Portfolio</title>
     <link rel="stylesheet" href="./styles/styles.scss">
+    <link rel="icon" type="image/x-icon" href="/assets/metal_slug.png">
 </head>
 
 <body>
     <main>
-
-        <div id="root">
+        <div class="loader-ctn">
+         <div class="loader"></div>
+        </div>
+        <div id="root" class="loading">
             <header>
                 <nav aria-labelledby="site-header-nav-label">
                     <h2 id="site-header-nav-label" class="hidden">
@@ -51,11 +54,8 @@
             <div class="section-ctn" id="about">
                 <div class="container">
                     <div class="about-wrapper">
-                        <h1>About Me</h1>
                         <div class="about-content">
-                            <div class="img-wrapper">
-                                <img src="/assets/head_shot.jpg" alt="profile pic" />
-                            </div>
+                            <img class="photo" src="/assets/head_shot.jpg" alt="profile pic" />
                             <div class="about-text">
                                 <p>IT and Networking Manager for 4 years at <a target="_blank"
                                         href="https://www.koeppelautogroup.com/">Koeppel Auto Group</a></Koeppel> with a
@@ -68,7 +68,7 @@
                                 <p>In my free time i enjoy cycling, traveling, and collecting films.</p>
                                 <p>I am in the process of working on more projects, my aim is to use this as well as my
                                     GitHub to display
-                                    my work to the world. Thank you for visiting.
+                                    my work to the world. This website was written in vanilla JS. thank you for visiting.
                                 </p>
                             </div>
                         </div>

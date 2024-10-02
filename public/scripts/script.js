@@ -136,10 +136,21 @@
     }, 250);
   }
 
+  function removeLoader() {
+    window.setTimeout(()=>{
+      const loaderCtn =document.querySelector('.loader-ctn');
+      const root = document.querySelector('#root');
+
+      loaderCtn.classList.add('hide');
+      root.classList.remove('loading');
+    }, 1500);
+  }
+
   setPageBeforeUnload();
   setSectionCtnsObserver();
   setFocusedToHomeNavItem();
 
   initTypingAnimation();
   applySmoothScrollingToAnchorTags();
+  removeLoader();
 })();

@@ -16,6 +16,30 @@ body {
   main {
     height: 100%;
 
+    .loader-ctn {
+      position: fixed;
+      z-index: 2;
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--color-white);
+      transition: all 0.3s ease-in-out;
+      .loader {
+        border: 16px solid var(--color-dark-gray);
+        border-radius: 50%;
+        border-top: 16px solid var(--color-blue);
+        width: 120px;
+        height: 120px;
+        -webkit-animation: spin 2s linear infinite; /* Safari */
+        animation: spin 2s linear infinite;
+      }
+      &.hide {
+        opacity: 0;
+      }
+    }
+
     #root {
       height: 100%;
       font-family: "PTSans", "Helvetica Neue", "Helvetica", sans-serif;
@@ -124,6 +148,7 @@ body {
         &#about {
           background: var(--color-gray);
           .container .about-wrapper {
+            display: flex;
             padding: 24px;
             margin-top: 36px;
             border-radius: 5px;
@@ -133,19 +158,12 @@ body {
               text-align: center;
             }
             .about-content {
-              display:grid;
-              grid-template-columns: 1fr 1fr;
-              height:calc(100% - 4rem - 24px);
-              align-items:center;
-              .img-wrapper {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                img {
-                  width: 50%;
-                  max-height: 85%;
-                  border-radius: 10px;
-                }
+              gap:20px;
+              display: flex;
+              align-items: center;
+              .photo{
+                width: 50%;
+                border-radius: 10px;
               }
               .about-text {
                 display: flex;
@@ -255,6 +273,45 @@ body {
           }
         }
       }
+
+      &.loading {
+        overflow: hidden;
+      }
     }
+  }
+}
+@-webkit-keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@-moz-keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@-moz-keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
