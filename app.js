@@ -29,6 +29,9 @@ app.get("/", (req, res) => {
   res.sendFile(__dirname + "/index.html");
 });
 
-app.post("/submit-form", formController.createFormEntry);
+app.post("/submit-form", (req, res) => {
+  formController.createFormEntry(req, res);
+  res.sendFile(__dirname + '/public/formSubmissionSuccessful.html');
+});
 
 module.exports = app;

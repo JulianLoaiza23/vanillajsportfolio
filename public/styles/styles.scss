@@ -37,6 +37,7 @@ body {
       }
       &.hide {
         opacity: 0;
+        pointer-events: none;
       }
     }
 
@@ -161,15 +162,19 @@ body {
               gap:20px;
               display: flex;
               align-items: center;
-              .photo{
+              .photo-wrapper {
                 width: 50%;
-                border-radius: 10px;
+                text-align: center;
+                .photo{
+                  width: 60%;
+                  border-radius: 10px;
+                }
               }
               .about-text {
                 display: flex;
                 flex-flow: column;
                 justify-content: center;
-                height: 100%;
+                width: 50%;
               }
             }
           }
