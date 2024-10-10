@@ -34,4 +34,9 @@ app.post("/submit-form", (req, res) => {
   res.sendFile(__dirname + '/public/formSubmissionSuccessful.html');
 });
 
+app.get("/pokedex", (req, res) => {
+  res.sendFile(__dirname + '/public/projects/pokedex/pokedex.html');
+});
+
+
 module.exports = app;
