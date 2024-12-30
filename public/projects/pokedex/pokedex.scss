@@ -6,50 +6,390 @@
     gap: 16px;
 
     #pokemonResults {
+        height: 335px;
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 16px;
         background: #c40808;
         border-radius: 20px;
-        padding: 32px;
+        box-shadow: -3px 2px 0px 3px #620404;
 
+        .poke-ctrls-wrapper {
+            padding: 0 24px;
 
-        #pokemonSpriteWrapper {
-            background: gray;
-            padding: 24px 24px 48px 24px;
-            border-radius: 10px 10px 10px 56px;
+            #pokemonSpriteWrapper {
+                background: lightgray;
+                padding: 16px 16px 42px 16px;
+                border-radius: 10px;
+                position: relative;
 
-            .img-wrapper {
-                background: white;
-                height: 100px;
-                width: 100px;
-                #pokeSprite {
-                    border: 1px solid;
+                .top-btn {
+                    top: 4px;
+                    width: 8px;
+                    height: 8px;
+                    border-radius: 50%;
+                    position: absolute;
+                    background: orange;
+                    border: 1px solid #838383;
+
+                    &:first-child {
+                        left: 80px;
+                    }
+
+                    &:nth-child(2) {
+                        left: 100px;
+                    }
+                }
+
+                .img-wrapper {
+                    background: white;
+                    height: 130px;
+                    width: 160px;
+                    border: 2px solid #838383;
                     border-radius: 6px;
-                   
+
+                    #pokeSprite {
+                        height: 100%;
+                        width: 100%;
+                    }
+                }
+
+                .btm-btn {
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 50%;
+                    background: #a30a0a;
+                    position: absolute;
+                    bottom: 12px;
+                    left: 32px;
+                }
+
+                .btm-bar-ctn {
+                    position: absolute;
+                    display: flex;
+                    bottom: 13px;
+                    right: 36px;
+                    gap: 8px;
+
+                    .btm-bar {
+                        display: flex;
+                        flex-flow: column;
+                        gap: 3px;
+
+                        .bar {
+                            height: 3px;
+                            width: 20px;
+                            border-radius: 2px;
+                            background: #303030;
+                        }
+                    }
+
+                }
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    border-top: 24px solid lightgray;
+                    border-left: 24px solid #c40808;
+                    width: 0;
+                }
+            }
+
+            .ctrls-wrapper {
+                padding: 12px 0;
+
+                .color-btns-wrapper {
+                    display: flex;
+                    padding: 12px 0;
+                    align-items: center;
+
+                    .blue-btn {
+                        width: 36px;
+                        height: 36px;
+                        border-radius: 50%;
+                        position: absolute;
+                        background: linear-gradient(to right, blue, darkblue);
+                    }
+
+                    .green-btn,
+                    .orange-btn {
+                        height: 6px;
+                        width: 30px;
+                        border-radius: 20px;
+                    }
+
+                    .green-btn {
+                        margin-left: 52px;
+                        margin-right: 12px;
+                        background: lightgreen;
+                    }
+
+                    .orange-btn {
+                        background: lightcoral;
+                    }
+                }
+
+                .details-btns-wrapper {
+                    gap: 16px;
+                    display: flex;
+                    justify-content: flex-end;
+
+                    .poke-num-btn {
+                        width: 80px;
+                        height: 40px;
+                        display: flex;
+                        border-radius: 8px;
+                        background: green;
+                        align-items: center;
+                        justify-content: center;
+
+                        .poke-count {
+                            width: 36px;
+                            height: 12px;
+                            padding: 8px;
+                            display: flex;
+                            border-radius: 4px;
+                            background: white;
+                            align-items: center;
+                            justify-content: center;
+                        }
+                    }
+
+                    .directional-wrapper {
+                        width: 50px;
+                        height: 50px;
+                        position: relative;
+                        border-radius: 50%;
+                        background: #292929;
+
+                        >div {
+                            position: absolute;
+                            border-bottom: solid 12px black;
+                            border-left: solid 8px transparent;
+                            border-right: solid 8px transparent;
+
+                            &.up {
+                                top: 4px;
+                                left: 50%;
+                                transform: translateX(-50%);
+                            }
+
+                            &.right {
+                                right: 0;
+                                top: 20px;
+                                transform: rotate(90deg);
+
+                            }
+
+                            &.down {
+                                left: 17px;
+                                bottom: 4px;
+                                transform: rotate(180deg);
+                            }
+
+                            &.left {
+                                left: 0;
+                                top: 20px;
+                                transform: rotate(-90deg);
+                            }
+                        }
+                    }
                 }
             }
         }
 
-        #pokemonStatsCtn {
+        #pokedexSeparator {
+            width: 32px;
+            height: 100%;
+            background-image: linear-gradient(to right, red, darkred);
+
+            >div {
+                border-top: solid darkred 2px;
+                background: linear-gradient(to right, darkred, red, darkred);
+
+                &:first-child,
+                &:nth-child(2),
+                &:nth-child(4),
+                &:nth-child(5) {
+                    height: 38px;
+                }
+
+                &:nth-child(3) {
+                    height: 170px;
+                }
+
+                &:nth-child(5) {
+                    border-bottom: solid darkred 2px;
+                }
+            }
+        }
+
+        .poke-stats-wrapper {
+            gap: 12px;
             display: flex;
+            padding: 0 24px;
             flex-flow: column;
-            background: lightgreen;
-            padding: 16px;
-            border: 1px solid;
-            border-radius: 10px;
-            height: 100px;
-            width: 200px;
-            #errorCtn {
-                margin: 0;
-                &.hide {
-                    display: none;
+            align-items: center;
+
+            #pokemonStatsCtn {
+                display: flex;
+                flex-flow: column;
+                background: lightgreen;
+                padding: 16px;
+                border: 1px solid;
+                border-radius: 10px;
+                height: 100px;
+                width: 200px;
+
+                #errorCtn {
+                    margin: 0;
+
+                    &.hide {
+                        display: none;
+                    }
+                }
+            }
+
+            .blu-btns {
+                gap: 3px;
+                display: grid;
+                grid-template-rows: repeat(2, 24px);
+                grid-template-columns: repeat(5, 38px);
+
+                >div {
+                    border-radius: 2px;
+                    box-shadow: 0px 1px 0px 2px #2d2d80;
+                    background: linear-gradient(to top, #5050dc, #188fd5);
+                }
+            }
+
+            .btm-btn-wrapper {
+                gap: 16px;
+                width: 85%;
+                display: flex;
+                flex-flow: column;
+
+                .first-row {
+                    .green-btn {
+                        background: green;
+                        box-shadow: 0px 1px 0px 1px #282020;
+                    }
+
+                    .yellow-btn {
+                        background: yellow;
+                        box-shadow: 0px 1px 0px 1px #282020;
+                    }
+
+                    .first-col {
+                        gap: 12px;
+                        display: flex;
+                        .green-btn,
+                        .yellow-btn {
+                            height: 12px;
+                            width: 12px;
+                            border-radius: 50%;
+                        }
+                    }
+
+                    .second-col {
+                        gap: 12px;
+                        display: flex;
+                        .green-btn,
+                        .yellow-btn {
+                            height: 12px;
+                            width: 48px;
+                            border-radius: 12px;
+                        }
+                    }
+                }
+
+                .second-row {
+                    display: flex;
+                    align-items: center;
+                    .left-right-wrapper {
+                        display: flex;
+                        width: 72px;
+                        height: 24px;
+                        border-radius: 2px;
+                        box-shadow: 0px 1px 0px 2px #2d2d2d;
+                        background: linear-gradient(to top, rgb(88, 88, 88), rgb(117, 117, 117));
+                        > div {
+                            width: 50%;
+                            height: 100%;
+                            &.left {
+                                position: relative;
+                                border-right: 2px solid #2d2d2d;
+                                &::before {
+                                    content: '';
+                                    position: absolute;
+                                    bottom: 7px;
+                                    left: 16px;
+                                    border-top: 10px solid transparent;
+                                    border-left: 10px solid #c40808;
+                                    width: 0;
+                                    transform: rotate(45deg);
+                                }
+                            }
+                            &.right {
+                                position: relative;
+                                &::before {
+                                    content: '';
+                                    position: absolute;
+                                    bottom: 7px;
+                                    left: 10px;
+                                    border-top: 10px solid transparent;
+                                    border-left: 10px solid #c40808;
+                                    width: 0;
+                                    transform: rotate(225deg);
+                                }
+                            }
+                        }
+                    }
+                    .second-col {
+                        .yellow-btn {
+                            width: 24px;
+                            height: 24px;
+                            border-radius: 50%;
+                            background: yellow;
+                            box-shadow: 0px 1px 0px 1px #282020;
+                            position: relative;
+                            &::before {
+                                content: '';
+                                position: absolute;
+                                bottom: 7px;
+                                left: 10px;
+                                border-top: 10px solid transparent;
+                                border-left: 10px solid #c40808;
+                                width: 0;
+                                transform: rotate(45deg);
+                            }
+                        }
+                    }
+                }
+
+                .third-row {
+                    gap: 8px;
+                    display: flex;
+                    justify-content: center;
+                    .btn {
+                        width: 64px;
+                        height: 28px;
+                        border-radius: 4px;
+                        box-shadow: 1px 1px 1px 1px #888888;
+                        background: linear-gradient(to top, #d7dc50, #d59f28);
+                    }
+                }
+
+                > div {
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
                 }
             }
         }
 
     }
-
 
 }

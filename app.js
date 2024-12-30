@@ -38,5 +38,12 @@ app.get("/pokedex", (req, res) => {
   res.sendFile(__dirname + '/public/projects/pokedex/pokedex.html');
 });
 
+app.get("/rpg", (req, res) => {
+  res.sendFile(__dirname + '/public/projects/rpg/rpg.html');
+});
+
+app.get("/spotify", (req, res) => {
+  res.sendFile(__dirname + '/public/projects/spotify/spotify.html');
+});
 
 module.exports = app;

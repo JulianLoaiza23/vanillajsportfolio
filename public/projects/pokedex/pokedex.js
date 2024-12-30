@@ -49,13 +49,12 @@
       .catch((error) => {
         errorMsgCtn.classList.remove('hide');
         errorMsgCtn.textContent = 'Sorry This Pokemon has yet to be Discovered.';
-        spriteResult.src = '';
+        spriteResult.removeAttribute('src');
+        document.querySelector('.poke-count').textContent = '';
 
         for (let ctn of statResults) {
           ctn.textContent = '';
         }
-
-        console.error(error);
       });
   }
 
@@ -88,6 +87,7 @@
           break;
         case 1:
           statResults[i].textContent = 'ID: ' + pokemon.id;
+          document.querySelector('.poke-count').textContent = pokemon.id;
           break;
         case 2:
           statResults[i].textContent = 'Abilities: ' + pokemon.abilities.join(', ');
