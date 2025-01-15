@@ -130,10 +130,10 @@ body {
 
           .container {
             z-index: 1;
-            padding-top: 25%;
             display: flex;
             flex-flow: column;
             align-items: center;
+            justify-content: center;
             gap: 32px;
 
             .console-container {
@@ -353,6 +353,7 @@ body {
         h1 {
           font-size: 4rem;
           margin: 0;
+          text-align: center;
         }
 
         h2 {
