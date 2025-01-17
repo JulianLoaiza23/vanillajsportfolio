@@ -29,7 +29,7 @@
     const statResults = document.querySelectorAll('#pokemonStatsCtn > div');
     const errorMsgCtn = document.querySelector('#errorCtn');
 
-    const pokemonName = pokemonSearchContainer.value;
+    const pokemonName = pokemonSearchContainer.value.toLowerCase();
 
     fetch('https://pokeapi.co/api/v2/pokemon/' + pokemonName) // Replace with your API URL
       .then((response) => {
