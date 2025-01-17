@@ -117,7 +117,7 @@ body {
         }
       }
 
-      >div {
+      > div {
         height: 100vh;
         display: flex;
         justify-content: center;
@@ -418,5 +418,21 @@ body {
 
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 477px) {
+  body main #root  {
+    > div {
+      &#about .container .about-wrapper {
+        .about-content {
+          flex-wrap: wrap;
+          justify-content: center;
+          .about-text {
+            width: 100%;
+          }
+        }
+      }
+    }
   }
 }
